@@ -11,19 +11,22 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SigninActivity"
-            android:theme="@style/LoginTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity">
+        <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName=".SigninActivity">
         </activity>
         <activity
             android:name=".RehabilitateMeActivity"
             android:label="@string/title_activity_rehabilitate_me"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
