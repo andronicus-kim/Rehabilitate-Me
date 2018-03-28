@@ -28,6 +28,7 @@
         android:layout_marginBottom="16dp"
         android:hint="Password"/>
     <Button
+        android:id="@+id/btn_sign_in"
         android:background="@drawable/login_button_style"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -38,6 +39,7 @@
         android:textStyle="bold"
         android:text="Sign In"/>
     <Button
+        android:id="@+id/btn_sign_up"
         android:background="@drawable/login_button_style"
         android:layout_width="match_parent"
         android:layout_height="60dp"
