@@ -24,6 +24,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="Name"
+                android:textStyle="bold"
+                android:textSize="18sp"
                 android:layout_height="match_parent"/>
             <TextView
                 android:id="@+id/tv_name"
@@ -41,6 +43,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="Age"
+                android:textStyle="bold"
+                android:textSize="18sp"
                 android:layout_height="match_parent"/>
             <TextView
                 android:id="@+id/tv_age"
@@ -57,6 +61,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="Addiction"
+                android:textStyle="bold"
+                android:textSize="18sp"
                 android:layout_height="match_parent"/>
             <TextView
                 android:id="@+id/tv_addiction"

@@ -34,10 +34,7 @@ public class RehabilitateMeActivity extends AppCompatActivity
         setContentView(R.layout.activity_rehabilitate_me);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mUsers = new ArrayList<>();
-        for (int i = 0; i<10 ; i++){
-            mUsers.add(new User("Duncan",23,"Smoking"));
-        }
+        mUsers = ActivityUtil.getUsersList();
         mRecyclerView = findViewById(R.id.rec_view_rehabilitate_me);
         mRecyclerView.setAdapter(new RehabilitateMeAdapter(mUsers));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
