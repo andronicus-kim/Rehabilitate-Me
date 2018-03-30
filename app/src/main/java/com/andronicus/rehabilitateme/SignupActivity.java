@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SignupActivity extends AppCompatActivity {
 
     private LinearLayout mLinearLayout;
-    public Intent newIntent(@NonNull Context context){
+    public static Intent newIntent(@NonNull Context context){
         return new Intent(context,SignupActivity.class);
     }
     @Override
@@ -35,6 +35,8 @@ public class SignupActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.ic_action_save){
             Snackbar.make(mLinearLayout,"Saved",Snackbar.LENGTH_SHORT).show();
+            startActivity(RehabilitateMeActivity.newIntent(SignupActivity.this));
+            finish();
         }
         return true;
     }

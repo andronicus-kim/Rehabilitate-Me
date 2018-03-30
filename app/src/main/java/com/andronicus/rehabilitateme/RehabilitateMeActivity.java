@@ -20,10 +20,6 @@ public class RehabilitateMeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    public Intent newIntent(@NonNull Context context){
-        return new Intent(context,RehabilitateMeActivity.class);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +44,9 @@ public class RehabilitateMeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    public static Intent newIntent(@NonNull Context context){
+        return new Intent(context,RehabilitateMeActivity.class);
     }
 
     @Override
