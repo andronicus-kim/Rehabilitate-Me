@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
+    android:layout_marginBottom="16dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     app:cardElevation="8dp"
-    android:layout_height="100dp">
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
@@ -61,6 +62,7 @@
                 android:id="@+id/tv_addiction"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
                 android:text="name of addiction"
                 android:layout_height="match_parent"/>
         </LinearLayout>

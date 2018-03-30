@@ -10,6 +10,15 @@ public class User {
     private int age;
     private String addiction;
 
+    public User() {
+    }
+
+    public User(String name, int age, String addiction) {
+        this.name = name;
+        this.age = age;
+        this.addiction = addiction;
+    }
+
     public String getName() {
         return name;
     }
