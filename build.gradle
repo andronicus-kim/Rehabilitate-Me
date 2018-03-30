@@ -2,7 +2,9 @@
 
 buildscript {
 
-    ext.circular_imageview = '2.2.0'
+    ext{
+       circular_imageview = '2.2.0'
+    }
     
     repositories {
         google()
