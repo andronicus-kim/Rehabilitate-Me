@@ -34,7 +34,7 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.ic_action_save){
-            Snackbar.make(mLinearLayout,"Saved",Snackbar.LENGTH_SHORT).show();
+            Toast.makeText(this, "Saving...", Toast.LENGTH_LONG).show();
             startActivity(RehabilitateMeActivity.newIntent(SignupActivity.this));
             finish();
         }
