@@ -51,7 +51,7 @@ public class RehabilitateMeActivity extends AppCompatActivity
         }
         mRecyclerView = findViewById(R.id.rec_view_rehabilitate_me);
         mRecyclerView.setAdapter(new RehabilitateMeAdapter(mUsers));
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,true));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

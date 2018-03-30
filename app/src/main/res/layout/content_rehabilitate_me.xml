@@ -8,6 +8,7 @@
     tools:context="com.andronicus.rehabilitateme.RehabilitateMeActivity"
     tools:showIn="@layout/app_bar_rehabilitate_me">
     <android.support.v7.widget.RecyclerView
+        android:paddingTop="8dp"
         android:layout_marginTop="?attr/actionBarSize"
         android:id="@+id/rec_view_rehabilitate_me"
         android:layout_width="match_parent"
