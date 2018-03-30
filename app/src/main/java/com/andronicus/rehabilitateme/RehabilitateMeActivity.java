@@ -24,9 +24,16 @@ import java.util.List;
 public class RehabilitateMeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String NAME = "NAME";
+    public static final String AGE = "AGE";
+    public static final String ADDICTION = "ADDICTION";
+
     private RecyclerView mRecyclerView;
     private RehabilitateMeAdapter mAdapter;
     private List<User> mUsers;
+    private String name;
+    private int age;
+    private String addiction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +42,16 @@ public class RehabilitateMeActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mUsers = ActivityUtil.getUsersList();
+
+        name = getIntent().getStringExtra(NAME);
+        age = getIntent().getIntExtra(AGE,0);
+        addiction = getIntent().getStringExtra(ADDICTION);
+        if (!name.equals("") && age != 0 && !addiction.equals("")){
+            mUsers.add(new User(name,age,addiction));
+        }
         mRecyclerView = findViewById(R.id.rec_view_rehabilitate_me);
         mRecyclerView.setAdapter(new RehabilitateMeAdapter(mUsers));
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,true));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -47,8 +61,12 @@ public class RehabilitateMeActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-    public static Intent newIntent(@NonNull Context context){
-        return new Intent(context,RehabilitateMeActivity.class);
+    public static Intent newIntent(@NonNull Context context,String name,int age,String addiction){
+        Intent intent = new Intent(context,RehabilitateMeActivity.class);
+        intent.putExtra(NAME,name);
+        intent.putExtra(AGE,age);
+        intent.putExtra(ADDICTION,addiction);
+        return intent;
     }
 
     @Override

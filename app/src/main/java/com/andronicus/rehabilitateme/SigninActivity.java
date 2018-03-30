@@ -21,7 +21,7 @@ public class SigninActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.tv_forgot_password);
         textView.setText(string);
         findViewById(R.id.btn_sign_in).setOnClickListener(v ->
-                startActivity(RehabilitateMeActivity.newIntent(SigninActivity.this)));
+                startActivity(RehabilitateMeActivity.newIntent(SigninActivity.this,"",0,"")));
         findViewById(R.id.btn_sign_up).setOnClickListener(v ->
                 startActivity(SignupActivity.newIntent(SigninActivity.this)));
     }

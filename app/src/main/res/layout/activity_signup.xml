@@ -15,6 +15,7 @@
         android:layout_marginLeft="8dp">
 
         <EditText
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"/>
@@ -85,6 +86,7 @@
         android:layout_marginLeft="8dp">
 
         <EditText
+            android:id="@+id/et_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Age "/>
@@ -96,6 +98,7 @@
         android:layout_marginLeft="8dp">
 
         <EditText
+            android:id="@+id/et_addiction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type of addiction "/>
