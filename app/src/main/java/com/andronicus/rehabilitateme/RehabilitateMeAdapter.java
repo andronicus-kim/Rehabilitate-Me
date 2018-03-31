@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +35,11 @@ public class RehabilitateMeAdapter extends RecyclerView.Adapter<RehabilitateMeAd
     @Override
     public int getItemCount() {
         return mUsers.size();
+    }
+    public void filter(@NonNull List<User> users){
+        mUsers = new ArrayList<>();
+        mUsers.addAll(users);
+        notifyDataSetChanged();
     }
 
     public class RehabilitateMeViewHolder extends RecyclerView.ViewHolder{

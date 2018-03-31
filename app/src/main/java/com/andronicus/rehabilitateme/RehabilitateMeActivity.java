@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RehabilitateMeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
     public static final String NAME = "NAME";
     public static final String AGE = "AGE";
@@ -50,7 +52,8 @@ public class RehabilitateMeActivity extends AppCompatActivity
             mUsers.add(new User(name,age,addiction));
         }
         mRecyclerView = findViewById(R.id.rec_view_rehabilitate_me);
-        mRecyclerView.setAdapter(new RehabilitateMeAdapter(mUsers));
+        mAdapter = new RehabilitateMeAdapter(mUsers);
+        mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,6 +86,26 @@ public class RehabilitateMeActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.rehabilitate_me, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String name = newText.toLowerCase();
+        List<User> users = new ArrayList<>();
+        for (User user: mUsers){
+            if (user.getName().toLowerCase().contains(name)){
+                users.add(user);
+            }
+        }
+        mAdapter.filter(users);
         return true;
     }
 
